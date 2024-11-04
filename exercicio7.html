@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="exercicio7.css">
+
+
+    <title>exercicio 7</title>
+</head>
+<body>
+    
+    <div class="container mt-5 text-center">
+        <h1>Predominância de Metal ou Ametal em uma Liga</h1>
+
+        <div class="grid-container mt-4">
+            <div class="form-group">
+                <label for="percentualMetal">Percentual de Metal (%):</label>
+                <input type="number" id="percentualMetal" class="form-control" placeholder="Ex: 60" required>
+            </div>
+            <div class="form-group">
+                <label for="percentualAmetal">Percentual de Ametal (%):</label>
+                <input type="number" id="percentualAmetal" class="form-control" placeholder="Ex: 40" required>
+            </div>
+            <div class="form-group col-12">
+                <button id="verificarLiga" class="btn btn-primary mt-3">Verificar quantos % de predominancia</button>
+            </div>
+            <p id="resultado" class="mt-2"></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('verificarLiga').addEventListener('click', function() {
+            const percentualMetal = parseFloat(document.getElementById('percentualMetal').value);
+            const percentualAmetal = parseFloat(document.getElementById('percentualAmetal').value);
+            const soma = percentualMetal + percentualAmetal;
+
+            if (soma === 100) {
+                if (percentualMetal > percentualAmetal) {
+                    document.getElementById('resultado').innerText = "A liga é predominantemente metálica.";
+                } else {
+                    document.getElementById('resultado').innerText = "A liga é predominantemente ametálica.";
+                }
+            } else {
+                document.getElementById('resultado').innerText = "A soma das porcentagens deve ser igual a 100%.";
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="exercicio9.css">
+
+    <title>exercicio 9</title>
+</head>
+<body>
+
+    <div class="container mt-5 text-center">
+        <h1>Receber Valores do Usuário</h1>
+        <div class="grid-container mt-4">
+            <div class="row">
+                <div class="col-12">
+                    <input type="number" id="valorInput" class="form-control" placeholder="Insira um número" required>
+                    <button id="adicionarValor" class="btn btn-primary mt-2">Adicionar Valor</button>
+                </div>
+                <div class="col-12 mt-3">
+                    <button id="mostrarValores" class="btn btn-success">Mostrar Todos os Valores</button>
+                    <button id="mostrarMaior" class="btn btn-info">Mostrar Maior Valor</button>
+                    <button id="mostrarMenor" class="btn btn-danger">Mostrar Menor Valor</button>
+                </div>
+                <p id="resultado" class="mt-4 col-12"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const valores = [];
+
+        document.getElementById('adicionarValor').addEventListener('click', function() {
+            const valorInput = document.getElementById('valorInput').value;
+            if (valorInput) {
+                valores.push(parseFloat(valorInput));
+                document.getElementById('valorInput').value = ''; // Limpa o campo após adicionar
+                document.getElementById('resultado').innerText = 'Valor adicionado!';
+            }
+        });
+
+        document.getElementById('mostrarValores').addEventListener('click', function() {
+            document.getElementById('resultado').innerText = `Todos os valores: ${valores.join(', ')}`;
+        });
+
+        document.getElementById('mostrarMaior').addEventListener('click', function() {
+            if (valores.length > 0) {
+                const maiorValor = Math.max(...valores);
+                document.getElementById('resultado').innerText = `Maior valor: ${maiorValor}`;
+            } else {
+                document.getElementById('resultado').innerText = 'Nenhum valor inserido.';
+            }
+        });
+
+        document.getElementById('mostrarMenor').addEventListener('click', function() {
+            if (valores.length > 0) {
+                const menorValor = Math.min(...valores);
+                document.getElementById('resultado').innerText = `Menor valor: ${menorValor}`;
+            } else {
+                document.getElementById('resultado').innerText = 'Nenhum valor inserido.';
+            }
+        });
+    </script>
+
+</body>
+</html>

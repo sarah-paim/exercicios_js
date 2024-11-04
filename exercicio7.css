@@ -1,0 +1,40 @@
+body {
+    display: grid;
+    place-items: center; /* Centraliza vertical e horizontalmente */
+    height: 100vh; /* Ocupa toda a altura da tela */
+    background-color: #f8c9df; /* Cor de fundo clara */
+    margin: 0; /* Remove margens padrão */
+}
+
+.container {
+    text-align: center; /* Centraliza o texto no container */
+}
+
+h1 {
+    color: #ff69b4; /* Cor do título em rosa */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+    gap: 15px; /* Espaçamento entre os itens */
+}
+
+.form-group {
+    margin: 0; /* Remove margens padrão dos grupos de formulários */
+}
+
+.btn-primary {
+    background-color: #ff69b4; /* Botão rosa */
+    border-color: #ff69b4; /* Borda do botão rosa */
+}
+
+.btn-primary:hover {
+    background-color: #ff85c0; /* Cor do botão ao passar o mouse */
+    border-color: #ff85c0; /* Borda do botão ao passar o mouse */
+}
+
+p {
+    font-size: 1.2em; /* Aumenta o tamanho da fonte dos resultados */
+    color: #333; /* Cor do texto dos resultados */
+}

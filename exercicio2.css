@@ -1,0 +1,48 @@
+body {
+    display: grid;
+    place-items: center; /* Centraliza vertical e horizontalmente */
+    height: 100vh; /* Ocupa toda a altura da tela */
+    background-color: #f8c9df;
+    margin: 0; /* Remove margens padrão */
+}
+
+.container {
+    text-align: center; /* Centraliza o texto no container */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Espaçamento entre os grupos de formulário */
+}
+
+.form-control {
+    border: 2px solid #ff69b4; /* Borda rosa */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+.form-control:focus {
+    border-color: #ff85c0; /* Cor da borda ao focar no input */
+    box-shadow: 0 0 5px rgba(255, 105, 180, 0.5); /* Sombra ao focar */
+}
+
+.result {
+    border: 2px solid #ff69b4; /* Rosa vibrante para o resultado */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffeef8; /* Um leve rosa claro */
+    text-align: center;
+}
+
+h1 {
+    color: #ff69b4; /* Cor do título em rosa */
+}
+
+.btn-primary {
+    background-color: #ff69b4; /* Botão rosa */
+    border-color: #ff69b4; /* Borda do botão rosa */
+}
+
+.btn-primary:hover {
+    background-color: #ff85c0; /* Cor do botão ao passar o mouse */
+    border-color: #ff85c0; /* Borda do botão ao passar o mouse */
+}
+
