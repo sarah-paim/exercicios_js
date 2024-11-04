@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="exercicio11.css">
+
+    <title>exercicio 11</title>
+</head>
+<body>
+    
+    <div class="container mt-5 text-center">
+        <h1>Composição de Metal e Ametal</h1>
+        <div class="grid-container mt-4">
+            <div class="row">
+                <div class="col-12">
+                    <input type="number" id="porcentagemMetal" class="form-control" placeholder="Porcentagem de Metal (%)" required>
+                </div>
+                <div class="col-12 mt-2">
+                    <input type="number" id="porcentagemAmetal" class="form-control" placeholder="Porcentagem de Ametal (%)" required>
+                </div>
+                <div class="col-12 mt-2">
+                    <button id="calcular" class="btn btn-primary">Calcular Composição</button>
+                </div>
+                <p id="resultado" class="mt-4 col-12"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('calcular').addEventListener('click', function() {
+            const metal = parseFloat(document.getElementById('porcentagemMetal').value);
+            const ametal = parseFloat(document.getElementById('porcentagemAmetal').value);
+
+            if (metal + ametal !== 100) {
+                alert("A soma das porcentagens deve ser igual a 100%.");
+                return;
+            }
+
+            let resultado;
+            if (metal > 50) {
+                resultado = "A liga é predominantemente metálica.";
+            } else {
+                resultado = "A liga é predominantemente ametálica.";
+            }
+
+            document.getElementById('resultado').innerText = resultado;
+        });
+    </script>
+
+</body>
+</html>

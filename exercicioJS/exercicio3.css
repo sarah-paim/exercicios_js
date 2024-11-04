@@ -1,0 +1,33 @@
+body {
+    display: grid;
+    place-items: center; /* Centraliza vertical e horizontalmente */
+    height: 100vh; /* Ocupa toda a altura da tela */
+    background-color: #f8c9df;
+    margin: 0; /* Remove margens padrão */
+}
+
+.container {
+    text-align: center; /* Centraliza o texto no container */
+}
+
+.result {
+    border: 2px solid #ff69b4; /* Rosa vibrante para o resultado */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffeef8; /* Um leve rosa claro */
+    text-align: center;
+}
+
+h1 {
+    color: #ff69b4; /* Cor do título em rosa */
+}
+
+.btn-primary {
+    background-color: #ff69b4; /* Botão rosa */
+    border-color: #ff69b4; /* Borda do botão rosa */
+}
+
+.btn-primary:hover {
+    background-color: #ff85c0; /* Cor do botão ao passar o mouse */
+    border-color: #ff85c0; /* Borda do botão ao passar o mouse */
+}

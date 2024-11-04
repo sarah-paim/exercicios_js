@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="exercicio10.css">
+    <title>exercicio 10</title>
+</head>
+<body>
+    
+    <div class="container mt-5 text-center">
+        <h1>Cálculo da Função Exponencial</h1>
+        <div class="grid-container mt-4">
+            <div class="row">
+                <div class="col-12">
+                    <input type="number" id="valorX" class="form-control" placeholder="Informe um valor para x" required>
+                    <button id="calcular" class="btn btn-primary mt-2">Calcular e x</button>
+                </div>
+                <p id="resultado" class="mt-4 col-12"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calcularExponencial(x, termos = 100) {
+            let resultado = 1; 
+            let fator = 1; 
+
+            for (let n = 1; n <= termos; n++) {
+                fator *= x / n; 
+                resultado += fator; 
+            }
+
+            return resultado;
+        }
+
+        document.getElementById('calcular').addEventListener('click', function() {
+            const x = parseFloat(document.getElementById('valorX').value);
+            const resultado = calcularExponencial(x); 
+            document.getElementById('resultado').innerText = `e^${x} ≈ ${resultado.toFixed(4)}`; // Exibe o resultado com 4 casas decimais
+        });
+    </script>
+
+</body>
+</html>

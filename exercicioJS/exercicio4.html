@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 4</title>
+
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="exercicio4.css">
+</head>
+<body>
+    
+    <div class="container mt-5 text-center">
+        <h1>Calculadora de Gasto com Combustível</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="quilometragem">Quilometragem percorrida (km):</label>
+                    <input type="number" id="quilometragem" class="form-control" placeholder="Ex: 100" required>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="valorCombustivel">Valor do combustível (R$):</label>
+                    <input type="number" id="valorCombustivel" class="form-control" placeholder="Ex: 5.00" required>
+                </div>
+            </div>
+        </div>
+
+        <button id="calcularBtn" class="btn btn-primary mt-3">Calcular Gasto</button>
+
+        <div class="result mt-4">
+            <h2>Resultado</h2>
+            <p id="gasto"></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('calcularBtn').addEventListener('click', calcularGasto);
+
+        function calcularGasto() {
+            const quilometragem = parseFloat(document.getElementById('quilometragem').value);
+            const valorCombustivel = parseFloat(document.getElementById('valorCombustivel').value);
+            const consumo = 8; 
+
+            const litrosUsados = quilometragem / consumo; 
+            const gasto = litrosUsados * valorCombustivel; 
+
+            document.getElementById('gasto').innerText = `Gasto total: R$ ${gasto.toFixed(2)}`;
+        }
+    </script>
+
+</body>
+</html>
